@@ -1,0 +1,108 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+@import url('./index.css');
+@import url('./about.css');
+
+
+:root {
+    --cor-texto: #605E5E;
+    --cor-primaria: #439B63;
+    --cor-secundaria: #CBE08D;
+    --white: #FFF;
+
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+.contact-info {
+    width: 100%;
+    margin: 20px auto;
+    max-width: 260px;
+}
+.contact-info h2{
+    color: var(--cor-primaria);
+    padding-bottom: 20px;
+}
+.contact-info p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.map {
+    display: none;
+}
+.form {
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input {
+    width: 260px;
+    height: 30px;
+    margin: 5px 0; 
+    font-family: 'Poppins', sans-serif;
+}
+input::placeholder {
+    padding-left: 20px;
+}
+textarea::placeholder {
+    padding-left: 20px;
+    padding-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.textarea{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+}
+textarea {
+    width: 260px;
+    height: 90px;
+    margin: 0 auto;
+    margin-top: 10px;
+    resize: none;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.button input{
+    height: 40px;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    outline: none;
+    border: none;
+    margin-top: 10px;
+    border-radius: 2px;
+    transition: 0.4s ease-in-out;
+}
+.button input:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+@media (min-width: 1024px) {
+    .contact {
+        flex-direction: row;
+        width: 100%;
+    }
+    .map-mobile {
+        display: none;
+    }
+    .map {
+        display: block;
+        width: 50%;
+        height: 100%;
+    }
+    .contact-text {
+        width: 50%;
+    }
+}
