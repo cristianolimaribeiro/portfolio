@@ -24,3 +24,6 @@ let typed = new Typed('.typing', {
     loop:true
 })
 
+/* marcar link como ativo */
+
+let home = document.querySelector
