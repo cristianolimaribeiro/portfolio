@@ -9,6 +9,14 @@
     --text-color-y: #fdc600;
     --shadow-color:rgba(48, 46, 77, 0.15);
 }
+::-webkit-scrollbar{
+    width: 10px;
+    background: var(--text-black-700);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--text-color-y);
+    box-shadow: 0 -1000vh 0 100vh var(--text-color-y);
+}
 html{
     scroll-behavior: smooth;
 }
@@ -476,10 +484,12 @@ margin-top: 14%;
 .contact .contact-info-item .icon{
     display: inline-block;
 }
+.contact .contact-info-item .icon .fab ,
 .contact .contact-info-item .icon .fas {
     font-size: 25px;
     color: var(--text-color-y);
 }
+
 .contact .contact-info-item h4{
     font-size: 18px;
     font-weight: 700;
@@ -487,11 +497,16 @@ margin-top: 14%;
     text-transform: capitalize;
     margin: 15px 0 5px;
 }
+.contact .contact-info-item a,
 .contact .contact-info-item p {
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
     font-weight: 400;
+    transition: all 0.4s ease;
+}
+.contact .contact-info-item a:hover{
+    color: var(--text-color-y) ;
 }
 .contact .contact-form{
     flex: 0 0 100%;
@@ -670,4 +685,19 @@ margin-top: 14%;
         width: 180px;
     }
 }
+#toasts {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
+.toast {
+    background-color: #FFF;
+    color: var(--text-black-900);
+    border-radius: 5px;
+    padding:  1rem 2rem;
+    margin: 0.5rem;
+}

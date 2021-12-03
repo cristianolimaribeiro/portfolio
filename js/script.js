@@ -26,4 +26,47 @@ let typed = new Typed('.typing', {
 
 /* marcar link como ativo */
 
-let home = document.querySelector
+// let home = document.querySelector
+
+
+/* ENVIO DE EMAIL */
+
+const btnSubmit = document.getElementById('submit')
+
+
+btnSubmit.addEventListener('click', () =>{
+    let name = document.getElementById('name').value
+    let mailAddress = document.getElementById('email').value
+    let subject = document.getElementById('subject').value
+    let textMessage = document.getElementById('message').value
+    let toasts = document.getElementById('toasts')
+    const notification = 'Mensagem Enviada'
+    
+    function createNotification() {
+        const notify = document.createElement('div')
+        notify.classList.add('toast')
+
+        notify.innerText = notification
+        toasts.appendChild(notify)
+
+        setTimeout(() => {
+            notify.remove()
+        },3000)
+    }
+    Email.send({
+        Host : "smtp.gmail.com",
+        Username : "conta.cristiano.lima.ribeiro@gmail.com",
+        Password : "bpwfrbohevjbwptr",
+        To : 'cristiano.lima.ribeiro@gmail.com',
+        From : `${mailAddress}`,
+        Subject : `${subject}`,
+        Body: `<html><h2>Nome do Cliente: ${name}</h2><strong>${textMessage}</strong><br></br></html>`
+    }).then(
+        // message => alert(message)
+        createNotification()
+    );
+    document.getElementById('name').value = ''
+    document.getElementById('email').value = ''
+    document.getElementById('subject').value = ''
+    document.getElementById('message').value = ''
+})

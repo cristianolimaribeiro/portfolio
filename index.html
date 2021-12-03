@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/icones/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/switch.css">
@@ -229,6 +230,27 @@
                             <h4>E-mail</h4>
                             <p>cristiano.lima.ribeiro@gmail.com</p>
                         </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/cristiano-lima-ribeiro/">Cristiano Lima Ribeiro</a></p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon">
+                                <i class="fab fa-github-square"></i>
+                            </div>
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/cristianolimaribeiro">cristianolimaribeiro</a></p>
+                        </div>
+                        <div class="contact-info-item padd-15">
+                            <div class="icon">
+                                <i class="fab fa-instagram-square"></i>
+                            </div>
+                            <h4>Instagram</h4>
+                            <p><a href="https://www.instagram.com/eu.cristianolima">@eu.cristianolima</a></p>
+                        </div>
                     </div>
                     <h3 class="contact-title padd-15">ME MANDE UM EMAIL</h3>
                     <h4 class="contact-sub-title padd-15">RESPONDO TODAS AS MENSAGENS</h4>
@@ -237,12 +259,12 @@
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nome">
+                                        <input type="text" class="form-control" id="name"placeholder="Nome">
                                     </div>
                                 </div>
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="E-mail">
+                                        <input type="email" class="form-control" id="email" placeholder="E-mail">
                                     </div>
                                 </div>
                             </div>
@@ -250,21 +272,21 @@
                         <div class="row">
                             <div class="form-item col-12 padd-15">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="" placeholder="Assunto">
+                                    <input type="text" class="form-control" id="subject" placeholder="Assunto">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-item col-12 padd-15">
                                 <div class="form-group">
-                                    <textarea name="" class="form-control" id="" placeholder="Mensagem"></textarea>
+                                    <textarea name="" class="form-control" id="message" placeholder="Mensagem"></textarea>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-item col-12 padd-15">
                                 <div class="form-group">
-                                    <button type="submit" class="btn">ENVIAR</button>
+                                    <button type="submit" id="submit" class="btn">ENVIAR</button>
                                 </div>
                             </div>
                         </div>
@@ -280,7 +302,9 @@
             </div>
         </div>
     </div>
+    <div id="toasts"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./js/script.js"></script>
 </body>
 
