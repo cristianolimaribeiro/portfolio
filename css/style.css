@@ -526,6 +526,19 @@ margin-top: 14%;
     height: 50px;
     padding: 0 50px;
 }
+@media (max-width: 1400px){
+    .home .home-img img{
+        height: 350px;
+    }
+    .home-img::before{
+        left: -10px;
+        top: -35px;
+    }
+    .home-img::after {
+        right: -10px;
+        bottom: 40px;
+    }
+}
 
 @media (max-width: 1199px){
     .aside{
@@ -537,6 +550,17 @@ margin-top: 14%;
     .about .about-content .personal-info .info-item p span {
         display: block;
         margin-left: 0;
+    }
+    .home .home-img img{
+        height: 300px;
+    }
+    .home-img::before{
+        left: 10px;
+        top: -35px;
+    }
+    .home-img::after {
+        right: 10px;
+        bottom: 90px;
     }
 }
 @media (max-width: 991px){

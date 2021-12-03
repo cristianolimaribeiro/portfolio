@@ -3,8 +3,8 @@
 .style-switcher{
     position: fixed;
     right: 0;
-    top: 30px;
-    padding: 10px;
+    top: 5px;
+    padding: 5px;
 }
 .style-switcher .s-icon{
     position: absolute;
