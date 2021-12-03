@@ -7,6 +7,10 @@
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
     --text-color-y: #fdc600;
+    --shadow-color:rgba(48, 46, 77, 0.15);
+}
+html{
+    scroll-behavior: smooth;
 }
 body.dark{
     --bg-black-900: #151515;
@@ -15,6 +19,7 @@ body.dark{
     --text-black-900: #FFF;
     --text-black-700: #e9e9e9;
     --text-color-y: #fdc600;
+    --shadow-color:rgba(255, 255, 255, 0.15);
 }
 body {
     line-height: 1.5;
@@ -57,7 +62,7 @@ ul {
     margin: auto;
 }
 .section .container{
-    padding-top: 60px;
+    padding-top: 20px;
     padding-bottom: 70px;
 }
 .section-title{
@@ -376,7 +381,7 @@ margin-top: 14%;
     transition: all 0.4s ease;
 }
 .service .service-item .service-item-inner:hover{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 0 20px var(--shadow-color);
 }
 .service .service-item .service-item-inner .icon {
     height: 60px;
@@ -516,7 +521,7 @@ margin-top: 14%;
     transition: all .4s ease;
 }
 .form-item .form-control:focus{
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 0 20px var(--shadow-color);
 }
 .form-item textarea.form-control{
     height: 140px;

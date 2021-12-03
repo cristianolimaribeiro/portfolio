@@ -23,3 +23,4 @@ let typed = new Typed('.typing', {
     BackSpeed:80,
     loop:true
 })
+
