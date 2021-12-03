@@ -696,7 +696,7 @@ margin-top: 14%;
 
 .toast {
     background-color: #FFF;
-    color: var(--text-black-900);
+    color: #302e4d;
     border-radius: 5px;
     padding:  1rem 2rem;
     margin: 0.5rem;
