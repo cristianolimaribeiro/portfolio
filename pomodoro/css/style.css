@@ -1,0 +1,140 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    background-color: #34434C;
+    color: #FFF;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+.container {
+    max-width: 600px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+.circular-progress {
+    width: 520px;
+    height: 520px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF;
+    border-radius: 50%;
+}
+.pomodoro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.title {
+    position: absolute;
+    top: 20%;
+    height: 50px;
+    font-size: 300%;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+.break-session {
+    position: absolute;
+    top: 38%;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 500px;
+    width: 100%;
+
+}
+.break-session button{
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #C28031;
+    color: #FFF;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    transition: all 0.5s ease-in-out;
+}
+.break-session button:hover {
+    background-color: #4d5bf9;
+}
+.break-session img {
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+}
+.break, .session, .cicle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.n-s{
+    color: #C28031;
+    font-size: 140%;
+}
+.show-session {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 500px;
+    top: 50%;
+}
+
+.show-session img{
+    margin-top: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+@media (max-width:768px){
+    .container {
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .circular-progress {
+        width: 320px;
+        height: 320px;
+        max-width: 320px;
+        width: 100%;
+    }
+    .pomodoro {
+        width: 300px;
+        height: 300px;
+    }
+    .title {
+        font-size: 200%;
+    }
+    .break-session {
+        top:37%;
+    }
+    h2{
+        margin-bottom: 10px;
+    }
+    .show-session img{
+        margin-top: 15px;
+    }
+}
