@@ -696,6 +696,7 @@ margin-top: 14%;
         width: 180px;
     }
 }
+/* Notification Email */
 #toasts {
     position: fixed;
     bottom: 10px;
@@ -711,4 +712,34 @@ margin-top: 14%;
     border-radius: 5px;
     padding:  1rem 2rem;
     margin: 0.5rem;
+}
+
+/* Go Top */
+
+#go-top{
+    position: fixed;
+    right: 0;
+    bottom: 80px;
+    padding: 8px;
+}
+#go-top .s-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+    background: var(--bg-black-100);
+    color: var(--text-black-900);
+    right: 100%;
+    border: 1px solid var(--bg-black-50);
+    margin-right: 25px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    border-radius: 50%;
+}
+#go-top .s-icon i {
+    line-height: 40px;
 }

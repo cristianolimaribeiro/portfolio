@@ -24,12 +24,9 @@ let typed = new Typed('.typing', {
     loop:true
 })
 
-/* marcar link como ativo */
-
-// let home = document.querySelector
 
 
-/* ENVIO DE EMAIL */
+/* Sending Email  */
 
 const btnSubmit = document.getElementById('submit')
 
@@ -70,3 +67,15 @@ btnSubmit.addEventListener('click', () =>{
     document.getElementById('subject').value = ''
     document.getElementById('message').value = ''
 })
+
+/* Go Top */
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById('go-top').style.display = "flex";
+  } else {
+    document.getElementById('go-top').style.display = "none";
+  }
+}
