@@ -1,4 +1,17 @@
-﻿/* Day Nigth */
+﻿/* Go Top */
+var btnGoTop = document.getElementById("go-top")
+btnGoTop.style.display ="none"
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    btnGoTop.style.display = "flex";
+  } else {
+    btnGoTop.style.display = "none";
+  }
+}
+
+/* Day Nigth */
 
 const dayNight = document.querySelector('.day-night');
 dayNight.addEventListener('click', () => {
@@ -68,14 +81,3 @@ btnSubmit.addEventListener('click', () =>{
     document.getElementById('message').value = ''
 })
 
-/* Go Top */
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById('go-top').style.display = "flex";
-  } else {
-    document.getElementById('go-top').style.display = "none";
-  }
-}
