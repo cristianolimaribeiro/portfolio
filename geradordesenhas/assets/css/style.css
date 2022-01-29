@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;700;900&display=swap');
+
+body{
+    font-family: 'Jost', sans-serif;
+    background-color: #424874;
+    color: #d6e5e3;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    font-size: 48px;
+}
+.logo{
+    width: 400px;
+    margin-bottom: 40px;
+}
+.container{
+    max-width: 500px;
+}
+.container span{
+    font-size: 22px;
+}
+.container_input{
+    margin: 14 0;
+}
+.container_input span{
+    font-size: 22px;
+}
+.pad_15{
+    padding-left: 15px;
+}
+.range {
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #dcd6f7;
+    margin: 16px 0;
+    outline: none;
+    height: 16px;
+}
+.range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #a6b1e1;
+    cursor: pointer;
+}
+.button_action{
+    background-color: #a6b1e1;
+    border: none;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    color: #424874 ;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 30px;
+    transition: all 0.4s ease-in-out; 
+    -webkit-box-shadow: 0px 0px 25px 11px rgba(220,214,247,0.19); 
+    box-shadow: 0px 0px 25px 11px rgba(220,214,247,0.19);
+    cursor: pointer;
+}
+.button_action:hover{
+    background-color: #dcd6f7;
+    transform: scale(1.03);
+}
+.container_password{
+    width: 100%;
+    max-width: 500px;
+    margin: 14px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.title_password{
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+.password{
+    height: 60px;
+    background-color: rgba(202,207,214, 0.3);
+    width: 100%;
+    max-width: 368px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #dcd6f7;
+    transition: transform 0.4s;
+}
+.password:hover{
+    transform: scale(1.05);
+}
+.hide {
+    display: none;
+}
+.tip{
+    position: relative;
+    top: 16px;
+    margin-bottom: 30px;
+    padding: 6px 8px;
+    background: #a6b1e1 ;
+    color: #424874;
+    font-size: 16px;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+.container_password:hover .tip{
+    visibility: visible;
+    opacity: 1;
+    bottom: 20px;
+}
+#toasts {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.toast {
+    background-color: #d6e5e3;
+    color: #424874;
+    border-radius: 5px;
+    padding:  1rem 2rem;
+    margin: 0.5rem;
+}
+
+@media (max-width: 425px){
+    h1{
+        font-size:38px;
+    }
+    .logo{
+        width: 200px;
+    }
+    .container_password .tip{
+        visibility: visible;
+        opacity: 1;
+        bottom: 20px;
+    }
+    .hide{
+        display: flex;
+    }
+    .container_password{
+        max-width: 300px;
+    }
+}

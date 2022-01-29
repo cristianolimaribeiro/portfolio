@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Gerador de Senhas 🔐 </title>
+</head>
+<body>
+    <h1>Gerador de Senhas</h1>
+    <img class="logo" src="./assets/img/laptop.84e23294b9912d010a39b02321119b98.svg" alt="cofre">
+    <main class="container">
+        <span>Tamanho da Senha: <span id="valor_char"></span> Caracteres</span>
+        <div class="container_input">
+            <input type="range" class="range" id="range" min="6" max="20">
+            <div class="container_checkbox">
+                <input type="checkbox" id="letras_minusculas" ><span class="pad_15">Letras Minúsculas</span>
+            </div>
+            <div class="container_checkbox">
+                <input type="checkbox" id="letras_maiusculas" ><span class="pad_15">Letras Maiúsculas</span>
+            </div>
+            <div class="container_checkbox">
+                <input type="checkbox" id="char_special" ><span class="pad_15">Caracteres Especiais</span>
+            </div>
+            <div class="container_checkbox">
+                <input type="checkbox" id="numero" ><span class="pad_15">Números</span>
+            </div>
+            <button class="button_action" id="button" >Gerar Senha</button>
+        </div>
+    </main>
+    <div class="container_password hide" id="container_password">
+        <span class="title_password">Senha Gerada</span>
+        <span id="password" class="password"></span>
+        <span class="tip">Clique na senha para copiar 🔑</span>
+    </div>
+    <div id="toasts"></div>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
