@@ -14,10 +14,19 @@ function scrollFunction() {
 /* Day Nigth */
 
 const dayNight = document.querySelector('.day-night');
+const logo = document.querySelector('.logo img')
+
 dayNight.addEventListener('click', () => {
     dayNight.querySelector('i').classList.toggle('fa-sun')
     dayNight.querySelector('i').classList.toggle('fa-moon')
     document.body.classList.toggle('dark')
+    
+    if(document.body.classList.contains('dark')){
+        logo.src = './img/logo_dark.png'
+    }
+    else {
+        logo.src = './img/logo.png'
+    }
 })
 window.addEventListener('load',() => {
     if(document.body.classList.contains('dark')){
