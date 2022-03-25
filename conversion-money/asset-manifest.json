@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "https://cristianolimaribeiro.github.io/portfolio/conversion-money/static/js/main.502f0b2a.js",
+    "main.js": "https://cristianolimaribeiro.github.io/portfolio/conversion-money/static/js/main.693c4987.js",
     "static/media/coin.png": "https://cristianolimaribeiro.github.io/portfolio/conversion-money/static/media/coin.62b2643413a6e1f4ab28.png",
     "index.html": "https://cristianolimaribeiro.github.io/portfolio/conversion-money/index.html",
-    "main.502f0b2a.js.map": "https://cristianolimaribeiro.github.io/portfolio/conversion-money/static/js/main.502f0b2a.js.map"
+    "main.693c4987.js.map": "https://cristianolimaribeiro.github.io/portfolio/conversion-money/static/js/main.693c4987.js.map"
   },
   "entrypoints": [
-    "static/js/main.502f0b2a.js"
+    "static/js/main.693c4987.js"
   ]
 }
