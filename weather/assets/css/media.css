@@ -1,0 +1,33 @@
+﻿/* Global */
+
+@media (max-width: 1080px){
+    html{
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720px){
+    html{
+        font-size: 87.5%;
+    }
+}
+
+@media (max-width: 375px){
+    .input__search::placeholder{
+        font-size: 1.5rem;
+    }
+    .city-name{
+        font-size: 2rem;
+    }
+    .city-content__degree--text{
+        font-size: 6rem;
+    }
+}
+@media (max-width: 320px){
+    .input__search::placeholder{
+        font-size: 1.5rem;
+    }
+    .city-name{
+        font-size: 1.5rem;
+    }
+}
