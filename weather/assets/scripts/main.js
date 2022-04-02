@@ -1,9 +1,12 @@
 ﻿window.addEventListener('load', initPage)
 const search = document.querySelector('.submit')
 
-function initPage(){
+const week = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+const dayOfWeek = new Date();
+
+function initPage() {
     let url
-    if(navigator.geolocation){
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((pos) => {
             let lat = pos.coords.latitude
             let long = pos.coords.longitude
@@ -13,16 +16,17 @@ function initPage(){
     }
 }
 
-function fetchOnLoad(api){
+function fetchOnLoad(api) {
     fetch(`${api}`)
         .then((response) => {
-            return response.json() })
-        .then((data) =>  {
+            return response.json()
+        })
+        .then((data) => {
             const elementContent = document.querySelector('.container-city-data')
             const options = { dateStyle: 'short' };
             const date = new Date(data.dt * 1000).toLocaleString('pt-br', options)
-        
-           elementContent.innerHTML =      `
+
+            elementContent.innerHTML = `
                             <div class="container-city__header">
                             <div class="container-city__header--name">
                                 <h3 class="city-name">${data.name}</h3>
@@ -40,7 +44,7 @@ function fetchOnLoad(api){
                         </div>
                         <div class="container-city__content">
                             <div class="city-content__data">
-                                <p class="city-content__data--day">quarta</p>
+                                <p class="city-content__data--day">${week[dayOfWeek.getDay()]}</p>
                                 <p class="city-content__data--date">${date}</p>
                                 <div class="city-content__data--wind">
                                     <img src="./assets/images/icons/windspeed.png" alt="" class="city-content__data--wind-img">
@@ -63,7 +67,7 @@ function fetchOnLoad(api){
                         </div>
                         </div>
         `
-    })
+        })
 }
 
 async function fetchData() {
@@ -79,7 +83,7 @@ function appendContent(content) {
     const options = { dateStyle: 'short' };
     const date = new Date(content.dt * 1000).toLocaleString('pt-br', options)
 
-    elementContent.innerHTML =      `
+    elementContent.innerHTML = `
                     <div class="container-city__header">
                     <div class="container-city__header--name">
                         <h3 class="city-name">${content.name}</h3>
@@ -97,7 +101,7 @@ function appendContent(content) {
                 </div>
                 <div class="container-city__content">
                     <div class="city-content__data">
-                        <p class="city-content__data--day">quarta</p>
+                        <p class="city-content__data--day">${week[dayOfWeek.getDay()]}</p>
                         <p class="city-content__data--date">${date}</p>
                         <div class="city-content__data--wind">
                             <img src="./assets/images/icons/windspeed.png" alt="" class="city-content__data--wind-img">
@@ -120,10 +124,10 @@ function appendContent(content) {
                 </div>
                 </div>
 `
-   
+
 }
 
-async function main(){
+async function main() {
     const initialData = await fetchData()
     appendContent(initialData)
 
