@@ -8,6 +8,8 @@
     --text-black-700: #504e70;
     --text-color-y: #fdc600;
     --shadow-color:rgba(48, 46, 77, 0.15);
+
+    
 }
 ::-webkit-scrollbar{
     width: 10px;
