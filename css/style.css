@@ -36,6 +36,18 @@ body {
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
+    color: var(--text-black-700);
+    background-color: var(--bg-black-900);
+}
+
+/* Links: sem sublinhado por padrão, underline no hover e cor do tema */
+a, a:link, a:visited{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover, a:focus{
+    text-decoration: underline;
+    color: var(--text-color-y);
 }
 * {
     margin: 0;
@@ -246,6 +258,21 @@ ul {
 }
 .aside .nav {
     margin-top: 50px;
+    /* permitir rolagem interna quando os links ultrapassarem a altura */
+    overflow-y: auto;
+    flex: 1 1 auto;
+    width: 100%;
+    padding-right: 8px; /* espaço para o scrollbar sem encostar no conteúdo */
+    scrollbar-width: thin;
+    scrollbar-color: var(--text-color-y) transparent;
+}
+
+.aside .nav::-webkit-scrollbar{
+    width: 8px;
+}
+.aside .nav::-webkit-scrollbar-thumb{
+    background: var(--text-color-y);
+    border-radius: 8px;
 }
 .aside .nav li {
     margin-bottom: 20px;
