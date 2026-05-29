@@ -12,15 +12,15 @@ export const services = [
 ];
 
 export const technologies = [
-  { name: "HTML 5", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/html.png" },
-  { name: "CSS 3", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/css.png" },
-  { name: "JavaScript", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/javascript.png" },
-  { name: "TypeScript", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/typescript.png" },
-  { name: "React JS", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/reactjs.png" },
-  { name: "Node JS", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/nodejs.png" },
-  { name: "Tailwind CSS", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/tailwind.png" },
-  { name: "Three JS", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/threejs.svg" },
-  { name: "git", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/git.png" },
+  { name: "HTML 5", icon: "/tech/html5.svg" },
+  { name: "CSS 3", icon: "/tech/css3.svg" },
+  { name: "JavaScript", icon: "/tech/js.svg" },
+  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "React JS", icon: "/tech/react.svg" },
+  { name: "Node JS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwind-css-original.svg" },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { name: "git", icon: "/tech/git.svg" },
 ];
 
 export const experiences = [

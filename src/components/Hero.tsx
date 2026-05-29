@@ -37,6 +37,7 @@ const Hero = () => {
               src="/foto.png"
               alt="Cristiano Lima Ribeiro"
               fill
+              sizes="(max-width: 768px) 150px, 200px"
               className="rounded-full border-4 border-[#915EFF] object-cover"
             />
           </motion.div>
