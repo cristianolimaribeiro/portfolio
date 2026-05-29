@@ -29,17 +29,21 @@ const Hero = () => {
           <motion.div 
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mt-8 relative w-[150px] h-[150px] sm:w-[200px] sm:h-[200px]"
+            transition={{ duration: 0.8, type: "spring" }}
+            className="mt-12 relative w-[200px] h-[200px] sm:w-[280px] sm:h-[280px]"
           >
-            <div className="absolute inset-0 bg-[#915EFF] rounded-full blur-2xl opacity-20 animate-pulse" />
-            <Image
-              src="/foto.png"
-              alt="Cristiano Lima Ribeiro"
-              fill
-              sizes="(max-width: 768px) 150px, 200px"
-              className="rounded-full border-4 border-[#915EFF] object-cover"
-            />
+            <div className="absolute inset-0 bg-[#915EFF] rounded-full blur-3xl opacity-30 animate-pulse" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#915EFF] to-[#bf61ff] rounded-full opacity-75 blur" />
+            <div className="relative h-full w-full rounded-full border-4 border-[#915EFF] overflow-hidden shadow-2xl">
+              <Image
+                src="/foto.png"
+                alt="Cristiano Lima Ribeiro"
+                fill
+                sizes="(max-width: 768px) 200px, 280px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </div>

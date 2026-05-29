@@ -11,10 +11,12 @@ const Earth = () => {
     <mesh scale={2.5}>
       <sphereGeometry args={[1, 32, 32]} />
       <meshStandardMaterial
-        color='#2f80ed'
-        emissive='#1d1836'
+        color='#915eff'
+        emissive='#2f80ed'
+        emissiveIntensity={0.5}
         wireframe
       />
+      <pointLight intensity={2} color="#915eff" />
     </mesh>
   );
 };

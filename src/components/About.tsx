@@ -53,7 +53,7 @@ const About = () => {
         Desenvolvedor Front-end Pleno com experiência em aplicações web corporativas, intranets, portais digitais e soluções integradas ao ecossistema Microsoft 365. Atuação sólida com React.js, TypeScript, JavaScript, SPFx (SharePoint Framework), SharePoint Online, Power Automate, Node.js, Express e integração com APIs REST. Experiência em levantamento de requisitos, análise funcional, componentização, performance, usabilidade, documentação técnica, suporte a implantação e sustentação de soluções para empresas de grande porte. Perfil técnico com base anterior em suporte, infraestrutura, MySQL e análise de sistemas, o que amplia a visão sobre segurança, confiabilidade, integração e experiência do usuário.
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      <div className='mt-20 flex flex-wrap justify-center gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
