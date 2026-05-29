@@ -12,15 +12,11 @@ export const services = [
 ];
 
 export const technologies = [
-  { name: "HTML 5", icon: "/tech/html5.svg" },
-  { name: "CSS 3", icon: "/tech/css3.svg" },
-  { name: "JavaScript", icon: "/tech/js.svg" },
-  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-  { name: "React JS", icon: "/tech/react.svg" },
-  { name: "Node JS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwind-css-original.svg" },
-  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-  { name: "git", icon: "/tech/git.svg" },
+  { name: "HTML 5", icon: "/tech/html5.png" },
+  { name: "CSS 3", icon: "/tech/css3.png" },
+  { name: "JavaScript", icon: "/tech/js.png" },
+  { name: "React JS", icon: "/tech/react.png" },
+  { name: "git", icon: "/tech/git.png" },
 ];
 
 export const experiences = [
