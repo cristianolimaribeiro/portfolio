@@ -1,25 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #ededed;
-  --surface: rgba(255, 255, 255, 0.05);
-  --accent: #22C55E;
-  --border: rgba(255, 255, 255, 0.08);
+  --background: #050816;
+  --foreground: #f3f3f3;
+  --primary: #050816;
+  --secondary: #aaa6c3;
+  --tertiary: #151030;
+  --black-100: #100d25;
+  --black-200: #090325;
+  --white-100: #f3f3f3;
 }
 
 @theme inline {
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-black-100: var(--black-100);
+  --color-black-200: var(--black-200);
+  --color-white-100: var(--white-100);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-accent: var(--accent);
-  --color-border: var(--border);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+.black-gradient {
+  background: #000000;
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  background: linear-gradient(to right, #434343, #000000);
+}
+
+.violet-gradient {
+  background: #804dee;
+  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+  background: -webkit-linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+}
+
+.green-pink-gradient {
+  background: "#00cea8";
+  background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+  background: -webkit-linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+}
+
+.orange-text-gradient {
+  background: #f12711;
+  background: -webkit-linear-gradient(to top, #f12711, #f5af19);
+  background: linear-gradient(to top, #f12711, #f5af19);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-text-gradient {
+  background: #11998e;
+  background: -webkit-linear-gradient(to top, #11998e, #38ef7d);
+  background: linear-gradient(to top, #11998e, #38ef7d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blue-text-gradient {
+  background: #56ccf2;
+  background: -webkit-linear-gradient(to top, #2f80ed, #56ccf2);
+  background: linear-gradient(to top, #2f80ed, #56ccf2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-text-gradient {
+  background: #ec008c;
+  background: -webkit-linear-gradient(to top, #ec008c, #fc6767);
+  background: linear-gradient(to top, #ec008c, #fc6767);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-hero-pattern {
+  background-image: url("https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/herobg.png");
+}
+
+/* canvas-loader */
+.canvas-load {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.vi-timeline-item-content {
+  box-shadow: none !important;
+  background: #1d1836 !important;
 }
