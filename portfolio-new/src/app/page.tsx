@@ -10,7 +10,14 @@ import {
   Terminal, 
   User, 
   Mail,
-  ExternalLink
+  ExternalLink,
+  Briefcase,
+  MapPin,
+  MessageSquare,
+  Phone,
+  ArrowUpRight,
+  FolderKanban,
+  MapPinHouse
 } from "lucide-react";
 
 // Manually defining brand icons since they were removed in lucide-react 1.0+
@@ -74,13 +81,40 @@ export default function Home() {
     },
   };
 
+  const timelineItems = [
+    {
+      company: "Ímpar",
+      role: "Desenvolvedor Front-end Pleno",
+      period: "2022 - Atual",
+      desc: "Especialista em SPFx e React. Projetos de Digital Workplace para grandes empresas.",
+      icon: Code2,
+      color: "text-accent"
+    },
+    {
+      company: "Informarca",
+      role: "Analista de Suporte",
+      period: "2019 - 2022",
+      desc: "Suporte técnico especializado e análise de sistemas de gestão internos.",
+      icon: MessageSquare,
+      color: "text-blue-400"
+    },
+    {
+      company: "Informarca",
+      role: "Analista de Infra",
+      period: "2010 - 2019",
+      desc: "Gestão de infraestrutura crítica, redes e segurança corporativa.",
+      icon: Server,
+      color: "text-purple-400"
+    }
+  ];
+
   return (
     <main className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden px-4 py-20 md:px-8 lg:px-12">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 md:grid-cols-4 md:grid-rows-2"
+        className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-4 md:grid-cols-4"
       >
         {/* Hero Card (2x2) */}
         <motion.div variants={itemVariants} className="md:col-span-2 md:row-span-2">
@@ -175,7 +209,41 @@ export default function Home() {
           </BentoCard>
         </motion.div>
 
-        {/* Profile Summary Card (1x2) */}
+        {/* Experience Card (2x2) */}
+        <motion.div variants={itemVariants} className="md:col-span-2 md:row-span-2">
+          <BentoCard className="flex h-full flex-col p-8 md:p-10">
+            <h3 className="mb-8 flex items-center gap-2 text-xl font-semibold tracking-tight">
+              <Briefcase className="h-5 w-5 text-accent" />
+              Experiência Profissional
+            </h3>
+            
+            <div className="relative space-y-8 before:absolute before:left-5 before:top-2 before:h-[calc(100%-16px)] before:w-px before:bg-white/10">
+              {timelineItems.map((item, idx) => (
+                <motion.div 
+                  key={item.company}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="relative flex gap-6 pl-12"
+                >
+                  <div className={`absolute left-0 flex h-10 w-10 items-center justify-center rounded-full bg-surface border border-white/5 ${item.color} z-10`}>
+                    <item.icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <h4 className="font-semibold">{item.company}</h4>
+                      <span className="text-xs font-medium text-accent/60">• {item.period}</span>
+                    </div>
+                    <p className="text-sm font-medium text-foreground/80">{item.role}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/40">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </BentoCard>
+        </motion.div>
+
+        {/* Profile Summary Card (1x2) moved down or integrated */}
         <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-2">
           <BentoCard className="flex h-full flex-col p-8">
             <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent">
@@ -189,7 +257,7 @@ export default function Home() {
                 Profissional com mais de <span className="text-foreground">10 anos de experiência</span> e sólido background em infraestrutura de TI.
               </p>
               <p>
-                Minha transição para o desenvolvimento foi movida pela paixão em construir. Hoje, foco em <span className="text-foreground font-medium text-accent/90">entregar soluções excepcionais</span> que alavancam negócios e impactam positivamente a vida dos usuários.
+                Minha transição para o desenvolvimento foi movida pela paixão em construir. Hoje, foco em <span className="text-foreground font-medium text-accent/90">entregar soluções excepcionais</span>.
               </p>
               <p>
                 Acredito que a tecnologia deve ser invisível e a experiência, inesquecível.
@@ -205,6 +273,68 @@ export default function Home() {
                 <ExternalLink className="h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
+          </BentoCard>
+        </motion.div>
+
+        {/* Contact Card (1x1) */}
+        <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+          <BentoCard className="flex h-full flex-col justify-between bg-gradient-to-br from-accent/10 to-transparent p-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold">Contato</h3>
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-background">
+                <Phone className="h-4 w-4" />
+              </div>
+            </div>
+            
+            <div className="mt-4 space-y-3">
+              <div className="flex items-center gap-3 text-sm text-foreground/60">
+                <MapPinHouse className="h-4 w-4 text-accent/60" />
+                <span>Petrópolis, RJ</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-foreground/60">
+                <Mail className="h-4 w-4 text-accent/60" />
+                <span className="truncate">cristiano.lima.ribeiro@gmail.com</span>
+              </div>
+            </div>
+            
+            <a 
+              href="https://wa.me/5524981481103"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-bold text-background transition-all hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Let&apos;s Talk
+              <ArrowUpRight className="h-4 w-4" />
+            </a>
+          </BentoCard>
+        </motion.div>
+
+        {/* Legacy Projects Card (1x1) */}
+        <motion.div variants={itemVariants} className="md:col-span-1 md:row-span-1">
+          <BentoCard className="group flex h-full flex-col justify-between p-6">
+            <div className="flex items-center justify-between">
+              <FolderKanban className="h-5 w-5 text-accent" />
+              <div className="h-2 w-2 rounded-full bg-accent/20" />
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold">Projetos Antigos</h3>
+              <p className="mt-1 text-xs text-foreground/40 line-clamp-2">Explorar legado de soluções em HTML/JS.</p>
+            </div>
+            
+            <div className="mt-4 flex gap-1">
+              {['/spotify', '/weather', '/clock'].map((p) => (
+                <div key={p} className="h-1.5 flex-1 rounded-full bg-white/5 group-hover:bg-accent/20 transition-colors" />
+              ))}
+            </div>
+            
+            <a 
+              href="/privacy.html" 
+              className="mt-4 flex items-center justify-between text-xs font-medium text-accent hover:underline"
+            >
+              Acessar Portfolio Antigo
+              <ArrowUpRight className="h-3 w-3" />
+            </a>
           </BentoCard>
         </motion.div>
       </motion.div>
