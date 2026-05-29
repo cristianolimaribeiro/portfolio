@@ -9,11 +9,17 @@ import * as random from "maath/random/dist/maath-random.esm";
 const Stars = (props: any) => {
   const ref = useRef<any>(null);
   const [sphere] = useState(() => {
-    const data = random.inSphere(new Float32Array(5000), { radius: 1.2 });
-    for (let i = 0; i < data.length; i++) {
-      if (isNaN(data[i])) data[i] = 0;
+    try {
+      const data = random.inSphere(new Float32Array(5000), { radius: 1.2 });
+      const validData = new Float32Array(data.length);
+      for (let i = 0; i < data.length; i++) {
+        validData[i] = isNaN(data[i]) ? 0 : data[i];
+      }
+      return validData;
+    } catch (error) {
+      console.error("Error generating stars:", error);
+      return new Float32Array(5000).fill(0);
     }
-    return data;
   });
 
   useFrame((state, delta) => {
