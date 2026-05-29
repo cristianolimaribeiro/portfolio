@@ -14,7 +14,8 @@ export const MeshGradient = () => {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full bg-blue-900/20 blur-[120px]"
+        style={{ backgroundColor: 'rgba(94, 106, 210, 0.2)' }}
+        className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] rounded-full blur-[120px]"
       />
       <motion.div
         animate={{
@@ -26,7 +27,8 @@ export const MeshGradient = () => {
           repeat: Infinity,
           ease: "linear",
         }}
-        className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-purple-900/20 blur-[120px]"
+        style={{ backgroundColor: 'rgba(34, 197, 94, 0.2)' }}
+        className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] rounded-full blur-[120px]"
       />
     </div>
   );

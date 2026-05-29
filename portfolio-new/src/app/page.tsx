@@ -145,6 +145,7 @@ export default function Home() {
                 href="https://github.com/cristianolimaribeiro" 
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Acessar perfil do GitHub"
                 className="flex items-center gap-2 rounded-full border border-white/5 bg-white/5 px-5 py-2.5 text-sm font-medium transition-all hover:bg-white/10 hover:border-white/20"
               >
                 <GithubIcon className="h-4 w-4" />
@@ -154,6 +155,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/cristiano-lima-ribeiro/" 
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Acessar perfil do LinkedIn"
                 className="flex items-center gap-2 rounded-full border border-white/5 bg-white/5 px-5 py-2.5 text-sm font-medium transition-all hover:bg-white/10 hover:border-white/20"
               >
                 <LinkedinIcon className="h-4 w-4" />
@@ -161,6 +163,7 @@ export default function Home() {
               </a>
               <a 
                 href="mailto:cristiano.lima.ribeiro@gmail.com"
+                aria-label="Enviar e-mail para Cristiano"
                 className="flex items-center gap-2 rounded-full border border-white/5 bg-white/5 px-5 py-2.5 text-sm font-medium transition-all hover:bg-white/10 hover:border-white/20"
               >
                 <Mail className="h-4 w-4" />
@@ -266,7 +269,10 @@ export default function Home() {
             
             <div className="mt-auto pt-10">
               <a 
-                href="#" 
+                href="https://drive.google.com/file/d/1UcfjwLBxanVVUXxDcQCKxPFfXy1c9TI7/view?usp=sharing" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Baixar Currículo de Cristiano"
                 className="group flex items-center justify-between rounded-2xl border border-white/5 bg-white/5 px-6 py-4 text-sm font-medium transition-all hover:bg-white/10"
               >
                 <span>Download CV</span>
@@ -301,6 +307,7 @@ export default function Home() {
               href="https://wa.me/5524981481103"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Falar com Cristiano via WhatsApp"
               className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-4 py-2.5 text-sm font-bold text-background transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               Let&apos;s Talk
@@ -329,7 +336,8 @@ export default function Home() {
             </div>
             
             <a 
-              href="/privacy.html" 
+              href="../index.html" 
+              aria-label="Acessar portfólio legado"
               className="mt-4 flex items-center justify-between text-xs font-medium text-accent hover:underline"
             >
               Acessar Portfolio Antigo
