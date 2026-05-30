@@ -17,6 +17,8 @@ import {
 import { FaGithub, FaLinkedin, FaGraduationCap, FaLanguage, FaWhatsapp } from "react-icons/fa";
 import { education, experiences, languages, technologies } from "@/constants";
 
+const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+
 const Home = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -121,7 +123,7 @@ const Home = () => {
 
         <div className="hero__photo-wrap">
           <Image
-            src="/profile.png"
+            src={`${basePath}/profile.png`}
             alt="Foto de Cristiano Lima Ribeiro"
             width={420}
             height={420}
