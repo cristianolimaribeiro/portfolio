@@ -12,15 +12,22 @@ export const services = [
 ];
 
 export const technologies = [
-  { name: "HTML 5", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/html.png" },
-  { name: "CSS 3", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/css.png" },
-  { name: "JavaScript", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/javascript.png" },
-  { name: "TypeScript", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/typescript.png" },
-  { name: "React JS", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/reactjs.png" },
-  { name: "Node JS", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/nodejs.png" },
-  { name: "Tailwind CSS", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/tailwind.png" },
-  { name: "Three JS", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/threejs.svg" },
-  { name: "git", icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/tech/git.png" },
+  {
+    group: "Front-end corporativo",
+    items: ["React.js", "TypeScript", "SPFx", "SCSS", "Context API", "UI responsiva"],
+  },
+  {
+    group: "Microsoft 365",
+    items: ["SharePoint Online", "PnPJS", "Microsoft Graph", "Power Automate", "Digital Workplace"],
+  },
+  {
+    group: "Integrações e dados",
+    items: ["Node.js", "Express", "APIs REST", "MySQL", "Sustentação de aplicações"],
+  },
+  {
+    group: "Entrega",
+    items: ["Requisitos", "Documentação técnica", "Troubleshooting", "Performance", "Acessibilidade"],
+  },
 ];
 
 export const experiences = [
