@@ -32,7 +32,7 @@ export const technologies = [
 
 export const experiences = [
   {
-    title: "Desenvolvedor",
+    title: "Desenvolvedor Pleno",
     company_name: "Ímpar",
     icon: "https://raw.githubusercontent.com/adrianhajdin/project_3d_portfolio/main/src/assets/company/starbucks.png",
     iconBg: "#383E56",
@@ -112,6 +112,6 @@ export const projects = [
     ],
     image: "/projects/requestflow.png",
     live_url: "https://requestflow-282z.onrender.com",
-    github_url: "https://github.com/cristianolimaribeiro",
+    github_url: "https://github.com/cristianolimaribeiro/RequestFlow",
   },
 ];

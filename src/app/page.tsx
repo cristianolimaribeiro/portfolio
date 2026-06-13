@@ -173,7 +173,7 @@ const Home = () => {
                 </div>
                 <div className="project-img-container">
                   <Image
-                    src={project.image || `${basePath}/file.svg`}
+                    src={project.image ? `${basePath}${project.image}` : `${basePath}/file.svg`}
                     alt={`Preview do projeto ${project.title}`}
                     fill
                     className="project-img"
@@ -198,7 +198,7 @@ const Home = () => {
 
       <section className="content-grid" id="carreira">
         <article className="card reveal reveal-up reveal-delay-2">
-          <h2><FiBriefcase size={18} /> Experiencia</h2>
+          <h2><FiBriefcase size={18} /> Experiência</h2>
           {experiences.map((job) => (
             <div key={`${job.company_name}-${job.date}`} className="timeline-item">
               <h3>{job.title}</h3>

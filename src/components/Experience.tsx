@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -14,7 +15,16 @@ import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
-const ExperienceCard = ({ experience }: { experience: any }) => {
+interface Experience {
+  title: string;
+  company_name: string;
+  icon: string;
+  iconBg: string;
+  date: string;
+  points: string[];
+}
+
+const ExperienceCard = ({ experience }: { experience: Experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
@@ -26,10 +36,12 @@ const ExperienceCard = ({ experience }: { experience: any }) => {
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className='flex justify-center items-center w-full h-full'>
-          <img
+          <Image
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            width={40}
+            height={40}
+            className='object-contain'
           />
         </div>
       }
