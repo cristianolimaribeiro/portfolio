@@ -1,6 +1,8 @@
-import { Variants } from "framer-motion";
+import { Variants, Transition } from "framer-motion";
 
-export const fadeIn = (direction: string, type: string, delay: number, duration: number): Variants => {
+type AnimationType = Transition["type"];
+
+export const fadeIn = (direction: string, type: AnimationType, delay: number, duration: number): Variants => {
   return {
     hidden: {
       x: direction === "left" ? 100 : direction === "right" ? -100 : 0,
@@ -70,7 +72,7 @@ export const zoomIn = (delay: number, duration: number): Variants => {
   };
 };
 
-export const slideIn = (direction: string, type: string, delay: number, duration: number): Variants => {
+export const slideIn = (direction: string, type: AnimationType, delay: number, duration: number): Variants => {
   return {
     hidden: {
       x: direction === "left" ? "-100%" : direction === "right" ? "100%" : 0,

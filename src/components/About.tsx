@@ -50,7 +50,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn("", "tween", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
         Desenvolvedor Front-end Pleno com experiência em aplicações web corporativas, intranets, portais digitais e soluções integradas ao ecossistema Microsoft 365. Atuação sólida com React.js, TypeScript, JavaScript, SPFx (SharePoint Framework), SharePoint Online, Power Automate, Node.js, Express e integração com APIs REST. Experiência em levantamento de requisitos, análise funcional, componentização, performance, usabilidade, documentação técnica, suporte a implantação e sustentação de soluções para empresas de grande porte. Perfil técnico com base anterior em suporte, infraestrutura, MySQL e análise de sistemas, o que amplia a visão sobre segurança, confiabilidade, integração e experiência do usuário.
