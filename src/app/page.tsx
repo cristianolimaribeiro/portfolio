@@ -15,7 +15,8 @@ import {
   FiArrowUpRight,
 } from "react-icons/fi";
 import { FaGithub, FaLinkedin, FaGraduationCap, FaLanguage, FaWhatsapp } from "react-icons/fa";
-import { education, experiences, languages, technologies } from "@/constants";
+import { FiExternalLink, FiFolder } from "react-icons/fi";
+import { education, experiences, languages, technologies, projects } from "@/constants";
 
 const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
 
@@ -25,7 +26,7 @@ const Home = () => {
   const topbarRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const sections = ["home", "sobre", "carreira", "contato"];
+    const sections = ["home", "sobre", "projetos", "carreira", "contato"];
     const observers = sections
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el))
@@ -96,6 +97,7 @@ const Home = () => {
         </button>
         <nav id="site-nav" className={`site-nav ${menuOpen ? "menu-open" : ""}`}>
           <a href="#sobre" className={activeSection === "sobre" ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Sobre</a>
+          <a href="#projetos" className={activeSection === "projetos" ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Projetos</a>
           <a href="#carreira" className={activeSection === "carreira" ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Carreira</a>
           <a href="#contato" className={activeSection === "contato" ? "is-active" : ""} onClick={() => setMenuOpen(false)}>Contato</a>
         </nav>
@@ -139,6 +141,59 @@ const Home = () => {
         <p>
           Atuação sólida com React.js, TypeScript, JavaScript, SPFx, SharePoint Online, Power Automate, Node.js, Express e integração com APIs REST. Experiência em levantamento de requisitos, análise funcional, componentização, performance, usabilidade, documentação técnica, implantação e sustentação para empresas de grande porte.
         </p>
+      </section>
+
+      <section className="projects-grid reveal reveal-up reveal-delay-2" id="projetos">
+        {projects.map((project) => (
+          <article key={project.title} className="project-card">
+            <div className="project-info">
+              <span className="project-label"><FiFolder /> Projeto em Destaque</span>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              
+              <ul className="project-features-list">
+                {project.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+
+              <ul className="project-stack-inline">
+                {project.stack.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="project-visual">
+              <div className="browser-mockup">
+                <div className="browser-header">
+                  <div className="browser-dot"></div>
+                  <div className="browser-dot"></div>
+                  <div className="browser-dot"></div>
+                </div>
+                <div className="project-img-container">
+                  <Image
+                    src={project.image || `${basePath}/file.svg`}
+                    alt={`Preview do projeto ${project.title}`}
+                    fill
+                    className="project-img"
+                    sizes="(max-width: 900px) 100vw, 40vw"
+                  />
+                  <div className="project-overlay">
+                    <div className="project-links">
+                      <a href={project.live_url} target="_blank" rel="noreferrer" className="btn-primary">
+                        Live Preview <FiExternalLink size={14} />
+                      </a>
+                      <a href={project.github_url} target="_blank" rel="noreferrer" className="btn-secondary">
+                        <FaGithub size={14} /> Código
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
       </section>
 
       <section className="content-grid" id="carreira">

@@ -97,3 +97,21 @@ export const languages = [
   { name: "Português", level: "Nativo" },
   { name: "Inglês", level: "Profissional" },
 ];
+
+export const projects = [
+  {
+    title: "RequestFlow",
+    description: "Aplicação web fullstack para gerenciamento de solicitações internas, simulando um fluxo corporativo de aprovação.",
+    details: "O sistema possui autenticação, perfis de acesso, cadastro de solicitações, acompanhamento de status, aprovação, reprovação com comentário obrigatório, histórico de movimentações e dashboard com indicadores.",
+    stack: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "JWT"],
+    features: [
+      "Autenticação e controle de permissões (RBAC)",
+      "Fluxo de aprovação com histórico detalhado",
+      "Dashboard com indicadores de performance",
+      "Consumo de APIs REST e persistência em banco",
+    ],
+    image: "/projects/requestflow.png",
+    live_url: "https://requestflow-282z.onrender.com",
+    github_url: "https://github.com/cristianolimaribeiro",
+  },
+];
