@@ -510,22 +510,22 @@ ul {
 }
 
 .project-card:not(.project-card--featured) {
-  grid-template-columns: 0.82fr 1.18fr;
-  min-height: 290px;
+  grid-template-columns: 0.72fr 1.28fr;
+  min-height: 275px;
 }
 
 .project-card:not(.project-card--featured) .project-visual {
-  padding: 0.55rem;
+  padding: 0.35rem;
 }
 
 .project-card:not(.project-card--featured) .browser-mockup {
-  min-height: 210px;
+  min-height: 200px;
 }
 
 .project-card:not(.project-card--featured) .project-img-container {
-  min-height: 210px;
+  min-height: 200px;
   background: #0b1024;
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -536,33 +536,34 @@ ul {
 }
 
 .project-card:not(.project-card--featured) .project-carousel-btn {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   top: 44%;
 }
 
 .project-card:not(.project-card--featured) .project-carousel-btn--prev {
-  left: 0.38rem;
+  left: 0.28rem;
 }
 
 .project-card:not(.project-card--featured) .project-carousel-btn--next {
-  right: 0.38rem;
+  right: 0.28rem;
 }
 
 .project-card:not(.project-card--featured) .project-preview-label {
-  left: 0.45rem;
-  bottom: 0.45rem;
+  left: 0.35rem;
+  bottom: 0.35rem;
   font-size: 0.62rem;
 }
 
 .project-card:not(.project-card--featured) .project-links {
-  margin-top: 0;
-  gap: 0.45rem;
+  margin-top: 0.1rem;
+  gap: 0.38rem;
 }
 
 .project-card:not(.project-card--featured) .project-links a {
-  padding: 0.48rem;
-  font-size: 0.74rem;
+  padding: 0.42rem;
+  font-size: 0.72rem;
+  min-width: 0;
 }
 
 .project-card:hover {
