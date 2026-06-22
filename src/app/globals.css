@@ -511,19 +511,19 @@ ul {
 
 .project-card:not(.project-card--featured) {
   grid-template-columns: 0.72fr 1.28fr;
-  min-height: 275px;
+  min-height: 255px;
 }
 
 .project-card:not(.project-card--featured) .project-visual {
-  padding: 0.35rem;
+  padding: 0.25rem;
 }
 
 .project-card:not(.project-card--featured) .browser-mockup {
-  min-height: 200px;
+  min-height: 175px;
 }
 
 .project-card:not(.project-card--featured) .project-img-container {
-  min-height: 200px;
+  min-height: 175px;
   background: #0b1024;
   border-radius: 8px;
   overflow: hidden;
@@ -536,9 +536,9 @@ ul {
 }
 
 .project-card:not(.project-card--featured) .project-carousel-btn {
-  width: 24px;
-  height: 24px;
-  top: 44%;
+  width: 22px;
+  height: 22px;
+  top: 43%;
 }
 
 .project-card:not(.project-card--featured) .project-carousel-btn--prev {
@@ -552,7 +552,7 @@ ul {
 .project-card:not(.project-card--featured) .project-preview-label {
   left: 0.35rem;
   bottom: 0.35rem;
-  font-size: 0.62rem;
+  font-size: 0.58rem;
 }
 
 .project-card:not(.project-card--featured) .project-links {
@@ -561,8 +561,8 @@ ul {
 }
 
 .project-card:not(.project-card--featured) .project-links a {
-  padding: 0.42rem;
-  font-size: 0.72rem;
+  padding: 0.38rem;
+  font-size: 0.7rem;
   min-width: 0;
 }
 
