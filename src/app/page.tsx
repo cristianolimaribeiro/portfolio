@@ -179,15 +179,44 @@ const Home = () => {
                     className="project-img"
                     sizes="(max-width: 900px) 100vw, 40vw"
                   />
-                  <div className="project-overlay">
-                    <div className="project-links">
-                      <a href={project.live_url} target="_blank" rel="noreferrer" className="btn-primary">
-                        Live Preview <FiExternalLink size={14} />
+                </div>
+                {project.media?.length ? (
+                  <div className="project-media-strip">
+                    {project.media.map((item) => (
+                      <a
+                        key={item.label}
+                        href={item.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="project-media-thumb"
+                        aria-label={`${item.label} do projeto ${project.title}`}
+                      >
+                        <Image
+                          src={`${basePath}${item.image}`}
+                          alt={item.label}
+                          fill
+                          className="project-media-image"
+                          sizes="160px"
+                        />
+                        <span>{item.label}</span>
                       </a>
-                      <a href={project.github_url} target="_blank" rel="noreferrer" className="btn-secondary">
-                        <FaGithub size={14} /> Código
+                    ))}
+                  </div>
+                ) : null}
+                <div className="project-overlay">
+                  <div className="project-links">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={link.label.toLowerCase().includes("código") ? "btn-secondary" : "btn-primary"}
+                      >
+                        {link.label.toLowerCase().includes("código") ? <FaGithub size={14} /> : <FiExternalLink size={14} />}
+                        {link.label}
                       </a>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

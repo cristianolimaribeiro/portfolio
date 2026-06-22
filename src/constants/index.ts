@@ -1,3 +1,25 @@
+export type ProjectLink = {
+  label: string;
+  url: string;
+};
+
+export type ProjectMedia = {
+  label: string;
+  image: string;
+  url: string;
+};
+
+export type Project = {
+  title: string;
+  description: string;
+  details: string;
+  stack: string[];
+  features: string[];
+  image: string;
+  links: ProjectLink[];
+  media?: ProjectMedia[];
+};
+
 export const navLinks = [
   { id: "about", title: "Sobre" },
   { id: "work", title: "Experiência" },
@@ -98,7 +120,7 @@ export const languages = [
   { name: "Inglês", level: "Profissional" },
 ];
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: "RequestFlow",
     description: "Aplicação web fullstack para gerenciamento de solicitações internas, simulando um fluxo corporativo de aprovação.",
@@ -111,7 +133,55 @@ export const projects = [
       "Consumo de APIs REST e persistência em banco",
     ],
     image: "/projects/requestflow.png",
-    live_url: "https://requestflow-282z.onrender.com",
-    github_url: "https://github.com/cristianolimaribeiro/RequestFlow",
+    links: [
+      { label: "Live Preview", url: "https://requestflow-282z.onrender.com" },
+      { label: "Código", url: "https://github.com/cristianolimaribeiro/RequestFlow" },
+    ],
+  },
+  {
+    title: "App Pulse",
+    description:
+      "Aplicação web fullstack para monitoramento da disponibilidade e saúde operacional de aplicações e APIs.",
+    details:
+      "Permite cadastrar serviços, executar verificações periódicas, registrar tempo de resposta, código HTTP, falhas, incidentes e histórico de status. Também conta com dashboard de indicadores, filtros por ambiente, criticidade e status, além de controle de acesso por perfil.",
+    stack: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "REST"],
+    features: [
+      "Monitoramento operacional com histórico de status e incidentes",
+      "Dashboard com indicadores e filtros por ambiente e criticidade",
+      "Integração com APIs REST e persistência em PostgreSQL",
+      "Arquitetura fullstack com jobs agendados e tratamento de falhas",
+    ],
+    image: "/projects/apppulse.png",
+    links: [
+      { label: "Live Preview", url: "https://apppulse-frontend.onrender.com/" },
+      { label: "Código", url: "https://github.com/cristianolimaribeiro/AppPulse" },
+    ],
+  },
+  {
+    title: "Corporate UI Kit",
+    description:
+      "Biblioteca de componentes React reutilizáveis para acelerar o desenvolvimento de aplicações corporativas com consistência visual, acessibilidade e tipagem forte.",
+    details:
+      "Reúne botões, campos de formulário, alertas, tabelas, modais, paginação e estados de carregamento, com documentação no Storybook e testes automatizados.",
+    stack: ["React", "TypeScript", "Vite", "Storybook", "Vitest", "CSS Modules"],
+    features: [
+      "Componentes reutilizáveis com foco em consistência visual",
+      "Documentação técnica e demonstração via Storybook",
+      "Validação com testes automatizados e React Testing Library",
+      "Arquitetura preparada para consumo em aplicações corporativas",
+    ],
+    image: "/projects/corporate-ui-demo.png",
+    media: [
+      {
+        label: "Storybook",
+        image: "/projects/corporate-ui-storybook.png",
+        url: "https://corporate-ui-kit-storybook.vercel.app/",
+      },
+    ],
+    links: [
+      { label: "Demo", url: "https://corporate-ui-kit.vercel.app/" },
+      { label: "Storybook", url: "https://corporate-ui-kit-storybook.vercel.app/" },
+      { label: "Código", url: "https://github.com/cristianolimaribeiro/Corporate-UI-Kit" },
+    ],
   },
 ];
