@@ -509,6 +509,56 @@ ul {
   padding: 1.15rem;
 }
 
+.project-card:not(.project-card--featured) {
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 330px;
+}
+
+.project-card:not(.project-card--featured) .project-visual {
+  padding: 0.75rem;
+}
+
+.project-card:not(.project-card--featured) .browser-mockup {
+  min-height: 220px;
+}
+
+.project-card:not(.project-card--featured) .project-img-container {
+  min-height: 220px;
+  background: #0b1024;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-card:not(.project-card--featured) .project-img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.5rem;
+  background: #0b1024;
+}
+
+.project-card:not(.project-card--featured) .project-carousel-btn {
+  width: 28px;
+  height: 28px;
+}
+
+.project-card:not(.project-card--featured) .project-carousel-btn--prev {
+  left: 0.45rem;
+}
+
+.project-card:not(.project-card--featured) .project-carousel-btn--next {
+  right: 0.45rem;
+}
+
+.project-card:not(.project-card--featured) .project-preview-label {
+  left: 0.55rem;
+  bottom: 0.55rem;
+  font-size: 0.64rem;
+}
+
+.project-card:not(.project-card--featured) .project-links {
+  margin-top: 0.15rem;
+}
+
 .project-card:hover {
   border-color: rgba(0, 208, 255, 0.3);
   transform: translateY(-2px);
@@ -776,6 +826,20 @@ ul {
 
   .project-card--featured .project-img-container {
     min-height: 260px;
+  }
+
+  .project-card:not(.project-card--featured) {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .project-card:not(.project-card--featured) .project-visual {
+    padding: 0.65rem;
+  }
+
+  .project-card:not(.project-card--featured) .browser-mockup,
+  .project-card:not(.project-card--featured) .project-img-container {
+    min-height: 200px;
   }
 
   .project-card:not(.project-card--featured) .project-info h3 {
