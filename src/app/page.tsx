@@ -161,10 +161,17 @@ const Home = () => {
       </section>
 
       <section className="projects-grid reveal reveal-up reveal-delay-2" id="projetos">
+        <div className="projects-heading">
+          <p>Projetos selecionados</p>
+          <h2>Casos que mostram produto, interface e integração na prática.</h2>
+        </div>
         {projects.map((project) => (
-          <article key={project.title} className="project-card">
+          <article key={project.title} className={`project-card ${project.featured ? "project-card--featured" : ""}`}>
             <div className="project-info">
-              <span className="project-label"><FiFolder /> Projeto em Destaque</span>
+              <span className="project-label">
+                <FiFolder />
+                {project.featured ? "Projeto em Destaque" : "Projeto"}
+              </span>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               

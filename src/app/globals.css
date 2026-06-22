@@ -430,8 +430,32 @@ ul {
 /* Projects Section Styles 4.0 - Compact Bento */
 .projects-grid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.projects-heading {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.projects-heading p {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.projects-heading h2 {
+  margin-bottom: 0;
+  max-width: 28ch;
+  text-align: right;
 }
 
 .project-card {
@@ -445,6 +469,42 @@ ul {
   background: linear-gradient(180deg, rgba(20, 28, 62, 0.7), rgba(12, 17, 39, 0.86));
   transition: border-color 0.2s ease, transform 0.2s ease;
   min-height: 380px;
+}
+
+.project-card--featured {
+  grid-column: 1 / -1;
+  grid-template-columns: 0.95fr 1.05fr;
+  min-height: 480px;
+  border-color: rgba(0, 208, 255, 0.22);
+  background:
+    radial-gradient(circle at top right, rgba(0, 208, 255, 0.1) 0%, transparent 34%),
+    radial-gradient(circle at bottom left, rgba(255, 47, 143, 0.1) 0%, transparent 30%),
+    linear-gradient(180deg, rgba(20, 28, 62, 0.7), rgba(12, 17, 39, 0.92));
+}
+
+.project-card--featured .project-info {
+  padding-right: 1.8rem;
+}
+
+.project-card--featured .project-info h3 {
+  font-size: clamp(1.6rem, 2.2vw, 2.15rem);
+}
+
+.project-card--featured .project-info p,
+.project-card--featured .project-features-list li {
+  font-size: 0.92rem;
+}
+
+.project-card--featured .project-stack-inline li {
+  font-size: 0.76rem;
+}
+
+.project-card--featured .project-img-container {
+  min-height: 330px;
+}
+
+.project-card--featured .project-visual {
+  padding: 1.15rem;
 }
 
 .project-card:hover {
@@ -724,6 +784,20 @@ ul {
 }
 
 @media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .projects-heading h2 {
+    text-align: left;
+    max-width: 32ch;
+  }
+
   .project-card {
     grid-template-columns: 1fr;
   }

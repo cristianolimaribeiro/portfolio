@@ -18,6 +18,7 @@ export type Project = {
   image: string;
   gallery?: ProjectMedia[];
   links: ProjectLink[];
+  featured?: boolean;
 };
 
 export const navLinks = [
@@ -122,27 +123,36 @@ export const languages = [
 
 export const projects: Project[] = [
   {
-    title: "RequestFlow",
-    description: "Aplicação web fullstack para gerenciamento de solicitações internas, simulando um fluxo corporativo de aprovação.",
-    details: "O sistema possui autenticação, perfis de acesso, cadastro de solicitações, acompanhamento de status, aprovação, reprovação com comentário obrigatório, histórico de movimentações e dashboard com indicadores.",
-    stack: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "JWT"],
+    title: "Corporate UI Kit",
+    featured: true,
+    description:
+      "Biblioteca de componentes React reutilizáveis para acelerar o desenvolvimento de aplicações corporativas com consistência visual, acessibilidade e tipagem forte.",
+    details:
+      "Reúne botões, campos de formulário, alertas, tabelas, modais, paginação e estados de carregamento, com documentação no Storybook e testes automatizados.",
+    stack: ["React", "TypeScript", "Vite", "Storybook", "Vitest", "CSS Modules"],
     features: [
-      "Autenticação e controle de permissões (RBAC)",
-      "Fluxo de aprovação com histórico detalhado",
-      "Dashboard com indicadores de performance",
-      "Consumo de APIs REST e persistência em banco",
+      "Componentes reutilizáveis com foco em consistência visual",
+      "Documentação técnica e demonstração via Storybook",
+      "Validação com testes automatizados e React Testing Library",
+      "Arquitetura preparada para consumo em aplicações corporativas",
     ],
-    image: "/projects/requestflow.png",
+    image: "/projects/corporate-ui-demo.png",
     gallery: [
       {
-        label: "Preview",
-        image: "/projects/requestflow.png",
-        url: "https://requestflow-282z.onrender.com",
+        label: "Demo",
+        image: "/projects/corporate-ui-demo.png",
+        url: "https://corporate-ui-kit.vercel.app/",
+      },
+      {
+        label: "Storybook",
+        image: "/projects/corporate-ui-storybook.png",
+        url: "https://corporate-ui-kit-storybook.vercel.app/",
       },
     ],
     links: [
-      { label: "Live Preview", url: "https://requestflow-282z.onrender.com" },
-      { label: "Código", url: "https://github.com/cristianolimaribeiro/RequestFlow" },
+      { label: "Demo", url: "https://corporate-ui-kit.vercel.app/" },
+      { label: "Storybook", url: "https://corporate-ui-kit-storybook.vercel.app/" },
+      { label: "Código", url: "https://github.com/cristianolimaribeiro/Corporate-UI-Kit" },
     ],
   },
   {
@@ -172,35 +182,27 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Corporate UI Kit",
-    description:
-      "Biblioteca de componentes React reutilizáveis para acelerar o desenvolvimento de aplicações corporativas com consistência visual, acessibilidade e tipagem forte.",
-    details:
-      "Reúne botões, campos de formulário, alertas, tabelas, modais, paginação e estados de carregamento, com documentação no Storybook e testes automatizados.",
-    stack: ["React", "TypeScript", "Vite", "Storybook", "Vitest", "CSS Modules"],
+    title: "RequestFlow",
+    description: "Aplicação web fullstack para gerenciamento de solicitações internas, simulando um fluxo corporativo de aprovação.",
+    details: "O sistema possui autenticação, perfis de acesso, cadastro de solicitações, acompanhamento de status, aprovação, reprovação com comentário obrigatório, histórico de movimentações e dashboard com indicadores.",
+    stack: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "JWT"],
     features: [
-      "Componentes reutilizáveis com foco em consistência visual",
-      "Documentação técnica e demonstração via Storybook",
-      "Validação com testes automatizados e React Testing Library",
-      "Arquitetura preparada para consumo em aplicações corporativas",
+      "Autenticação e controle de permissões (RBAC)",
+      "Fluxo de aprovação com histórico detalhado",
+      "Dashboard com indicadores de performance",
+      "Consumo de APIs REST e persistência em banco",
     ],
-    image: "/projects/corporate-ui-demo.png",
+    image: "/projects/requestflow.png",
     gallery: [
       {
-        label: "Demo",
-        image: "/projects/corporate-ui-demo.png",
-        url: "https://corporate-ui-kit.vercel.app/",
-      },
-      {
-        label: "Storybook",
-        image: "/projects/corporate-ui-storybook.png",
-        url: "https://corporate-ui-kit-storybook.vercel.app/",
+        label: "Preview",
+        image: "/projects/requestflow.png",
+        url: "https://requestflow-282z.onrender.com",
       },
     ],
     links: [
-      { label: "Demo", url: "https://corporate-ui-kit.vercel.app/" },
-      { label: "Storybook", url: "https://corporate-ui-kit-storybook.vercel.app/" },
-      { label: "Código", url: "https://github.com/cristianolimaribeiro/Corporate-UI-Kit" },
+      { label: "Live Preview", url: "https://requestflow-282z.onrender.com" },
+      { label: "Código", url: "https://github.com/cristianolimaribeiro/RequestFlow" },
     ],
   },
 ];
