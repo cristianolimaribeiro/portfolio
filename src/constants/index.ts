@@ -16,8 +16,8 @@ export type Project = {
   stack: string[];
   features: string[];
   image: string;
+  gallery?: ProjectMedia[];
   links: ProjectLink[];
-  media?: ProjectMedia[];
 };
 
 export const navLinks = [
@@ -133,6 +133,13 @@ export const projects: Project[] = [
       "Consumo de APIs REST e persistência em banco",
     ],
     image: "/projects/requestflow.png",
+    gallery: [
+      {
+        label: "Preview",
+        image: "/projects/requestflow.png",
+        url: "https://requestflow-282z.onrender.com",
+      },
+    ],
     links: [
       { label: "Live Preview", url: "https://requestflow-282z.onrender.com" },
       { label: "Código", url: "https://github.com/cristianolimaribeiro/RequestFlow" },
@@ -152,6 +159,13 @@ export const projects: Project[] = [
       "Arquitetura fullstack com jobs agendados e tratamento de falhas",
     ],
     image: "/projects/apppulse.png",
+    gallery: [
+      {
+        label: "Preview",
+        image: "/projects/apppulse.png",
+        url: "https://apppulse-frontend.onrender.com/",
+      },
+    ],
     links: [
       { label: "Live Preview", url: "https://apppulse-frontend.onrender.com/" },
       { label: "Código", url: "https://github.com/cristianolimaribeiro/AppPulse" },
@@ -171,7 +185,12 @@ export const projects: Project[] = [
       "Arquitetura preparada para consumo em aplicações corporativas",
     ],
     image: "/projects/corporate-ui-demo.png",
-    media: [
+    gallery: [
+      {
+        label: "Demo",
+        image: "/projects/corporate-ui-demo.png",
+        url: "https://corporate-ui-kit.vercel.app/",
+      },
       {
         label: "Storybook",
         image: "/projects/corporate-ui-storybook.png",

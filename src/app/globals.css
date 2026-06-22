@@ -562,66 +562,86 @@ ul {
   flex: 1;
   width: 100%;
   background: #fff;
+  min-height: 280px;
 }
 
 .project-img {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: top left;
 }
 
-.project-media-strip {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.65rem;
-}
-
-.project-media-thumb {
-  position: relative;
-  min-height: 112px;
-  border: 1px solid rgba(42, 52, 99, 0.95);
-  border-radius: 14px;
-  overflow: hidden;
-  background: rgba(10, 15, 36, 0.54);
-  text-decoration: none;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
-}
-
-.project-media-thumb span {
+.project-preview-label {
   position: absolute;
-  left: 0.7rem;
-  bottom: 0.55rem;
-  z-index: 1;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
+  left: 0.8rem;
+  bottom: 0.75rem;
+  z-index: 2;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #f4f7ff;
   background: rgba(7, 11, 27, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.55rem;
+  pointer-events: none;
 }
 
-.project-media-image {
-  object-fit: cover;
-  object-position: top center;
-}
-
-.project-overlay {
+.project-carousel-btn {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(7, 11, 27, 0.9) 0%, transparent 60%);
-  display: flex;
-  align-items: flex-end; /* Alinha na base */
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  background: rgba(7, 11, 27, 0.78);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding: 1.2rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.24);
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
+.project-carousel-btn--prev {
+  left: 0.65rem;
+}
+
+.project-carousel-btn--next {
+  right: 0.65rem;
+}
+
+.project-carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0.78rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: inline-flex;
+  gap: 0.45rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(7, 11, 27, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+}
+
+.project-carousel-dots button.is-active {
+  background: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 208, 255, 0.18);
 }
 
 .project-links {
@@ -632,10 +652,6 @@ ul {
   width: 100%;
   transform: translateY(10px);
   transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-links {
-  transform: translateY(0);
 }
 
 .project-links a {
@@ -717,14 +733,6 @@ ul {
     order: -1;
   }
 
-  .project-media-strip {
-    grid-template-columns: 1fr;
-  }
-
-  .project-overlay {
-    opacity: 1;
-    background: linear-gradient(to bottom, transparent 40%, rgba(7, 11, 27, 0.8));
-  }
 }
 
 .contact-card {
@@ -916,6 +924,11 @@ ul {
 
   .project-links a {
     flex: 1 1 100%;
+  }
+
+  .project-carousel-btn {
+    width: 30px;
+    height: 30px;
   }
 
 }
