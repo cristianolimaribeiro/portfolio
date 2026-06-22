@@ -16,7 +16,10 @@ export type Project = {
   stack: string[];
   features: string[];
   image: string;
-  gallery?: ProjectMedia[];
+  gallery?: {
+    label: string;
+    image: string;
+  }[];
   links: ProjectLink[];
   featured?: boolean;
 };
@@ -138,16 +141,8 @@ export const projects: Project[] = [
     ],
     image: "/projects/corporate-ui-demo.png",
     gallery: [
-      {
-        label: "Demo",
-        image: "/projects/corporate-ui-demo.png",
-        url: "https://corporate-ui-kit.vercel.app/",
-      },
-      {
-        label: "Storybook",
-        image: "/projects/corporate-ui-storybook.png",
-        url: "https://corporate-ui-kit-storybook.vercel.app/",
-      },
+      { label: "Demo", image: "/projects/corporate-ui-demo.png" },
+      { label: "Storybook", image: "/projects/corporate-ui-storybook.png" },
     ],
     links: [
       { label: "Demo", url: "https://corporate-ui-kit.vercel.app/" },
@@ -169,13 +164,6 @@ export const projects: Project[] = [
       "Arquitetura fullstack com jobs agendados e tratamento de falhas",
     ],
     image: "/projects/apppulse.png",
-    gallery: [
-      {
-        label: "Preview",
-        image: "/projects/apppulse.png",
-        url: "https://apppulse-frontend.onrender.com/",
-      },
-    ],
     links: [
       { label: "Live Preview", url: "https://apppulse-frontend.onrender.com/" },
       { label: "Código", url: "https://github.com/cristianolimaribeiro/AppPulse" },
@@ -193,13 +181,6 @@ export const projects: Project[] = [
       "Consumo de APIs REST e persistência em banco",
     ],
     image: "/projects/requestflow.png",
-    gallery: [
-      {
-        label: "Preview",
-        image: "/projects/requestflow.png",
-        url: "https://requestflow-282z.onrender.com",
-      },
-    ],
     links: [
       { label: "Live Preview", url: "https://requestflow-282z.onrender.com" },
       { label: "Código", url: "https://github.com/cristianolimaribeiro/RequestFlow" },

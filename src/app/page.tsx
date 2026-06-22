@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import {
   FiArrowDown,
   FiBriefcase,
-  FiChevronDown,
   FiChevronLeft,
   FiChevronRight,
+  FiChevronDown,
   FiMenu,
   FiX,
   FiMail,
@@ -25,7 +25,7 @@ const basePath = process.env.NODE_ENV === "production" ? "/portfolio" : "";
 const Home = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [projectSlides, setProjectSlides] = useState<Record<string, number>>({});
+  const [projectSlideIndex, setProjectSlideIndex] = useState<Record<string, number>>({});
   const topbarRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -48,20 +48,6 @@ const Home = () => {
 
     return () => observers.forEach((observer) => observer.disconnect());
   }, []);
-
-  const setSlide = (title: string, direction: "prev" | "next", total: number) => {
-    setProjectSlides((current) => {
-      const currentSlide = current[title] ?? 0;
-      const nextSlide = direction === "next"
-        ? (currentSlide + 1) % total
-        : (currentSlide - 1 + total) % total;
-
-      return {
-        ...current,
-        [title]: nextSlide,
-      };
-    });
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -166,11 +152,18 @@ const Home = () => {
           <h2>Casos que mostram produto, interface e integração na prática.</h2>
         </div>
         {projects.map((project) => (
-          <article key={project.title} className={`project-card ${project.featured ? "project-card--featured" : ""}`}>
-            <div className="project-info">
-              <span className="project-label">
-                <FiFolder />
-                {project.featured ? "Projeto em Destaque" : "Projeto"}
+          (() => {
+            const gallery = project.gallery?.length ? project.gallery : [{ label: project.title, image: project.image }];
+            const currentIndex = projectSlideIndex[project.title] ?? 0;
+            const activeSlide = gallery[currentIndex % gallery.length];
+            const hasCarousel = project.featured && gallery.length > 1;
+
+            return (
+            <article key={project.title} className={`project-card ${project.featured ? "project-card--featured" : ""}`}>
+              <div className="project-info">
+                <span className="project-label">
+                  <FiFolder />
+                  {project.featured ? "Projeto em Destaque" : "Projeto"}
               </span>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
@@ -180,97 +173,97 @@ const Home = () => {
                   <li key={feature}>{feature}</li>
                 ))}
               </ul>
+            </div>
+
+              <div className="project-visual">
+                <div className="browser-mockup">
+                  <div className="browser-header">
+                    <div className="browser-dot"></div>
+                    <div className="browser-dot"></div>
+                    <div className="browser-dot"></div>
+                  </div>
+                  <div className="project-img-container">
+                    <Image
+                      src={`${basePath}${activeSlide.image}`}
+                      alt={`Preview do projeto ${project.title} - ${activeSlide.label}`}
+                      fill
+                      className="project-img"
+                      sizes="(max-width: 900px) 100vw, 42vw"
+                    />
+                    {hasCarousel && (
+                      <>
+                        <button
+                          type="button"
+                          className="project-carousel-btn project-carousel-btn--prev"
+                          aria-label={`Ver imagem anterior do projeto ${project.title}`}
+                          onClick={() =>
+                            setProjectSlideIndex((current) => ({
+                              ...current,
+                              [project.title]:
+                                (current[project.title] ?? 0) === 0 ? gallery.length - 1 : (current[project.title] ?? 0) - 1,
+                            }))
+                          }
+                        >
+                          <FiChevronLeft size={14} className="project-carousel-btn-icon project-carousel-btn-icon--prev" />
+                        </button>
+                        <button
+                          type="button"
+                          className="project-carousel-btn project-carousel-btn--next"
+                          aria-label={`Ver próxima imagem do projeto ${project.title}`}
+                          onClick={() =>
+                            setProjectSlideIndex((current) => ({
+                              ...current,
+                              [project.title]: ((current[project.title] ?? 0) + 1) % gallery.length,
+                            }))
+                          }
+                        >
+                          <FiChevronRight size={14} className="project-carousel-btn-icon project-carousel-btn-icon--next" />
+                        </button>
+                        <div className="project-carousel-dots" aria-label={`Seletores de imagem do projeto ${project.title}`}>
+                          {gallery.map((slide, index) => (
+                            <button
+                              key={slide.label}
+                              type="button"
+                              className={index === currentIndex % gallery.length ? "is-active" : ""}
+                              aria-label={`Ver ${slide.label} do projeto ${project.title}`}
+                              onClick={() =>
+                                setProjectSlideIndex((current) => ({
+                                  ...current,
+                                  [project.title]: index,
+                                }))
+                              }
+                            />
+                          ))}
+                        </div>
+                        <div className="project-preview-label">{activeSlide.label}</div>
+                      </>
+                    )}
+                  </div>
+                </div>
+                <div className="project-links">
+                  {project.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={link.label.toLowerCase().includes("código") ? "btn-secondary" : "btn-primary"}
+                  >
+                    {link.label.toLowerCase().includes("código") ? <FaGithub size={14} /> : <FiExternalLink size={14} />}
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
 
               <ul className="project-stack-inline">
                 {project.stack.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </div>
-
-            <div className="project-visual">
-              {(() => {
-                const gallery = project.gallery?.length
-                  ? project.gallery
-                  : [{ label: "Preview", image: project.image, url: project.links[0]?.url ?? "#" }];
-                const activeSlide = projectSlides[project.title] ?? 0;
-                const current = gallery[activeSlide] ?? gallery[0];
-
-                return (
-                  <>
-                    <div className="browser-mockup">
-                      <div className="browser-header">
-                        <div className="browser-dot"></div>
-                        <div className="browser-dot"></div>
-                        <div className="browser-dot"></div>
-                      </div>
-                      <div className="project-img-container">
-                        <img
-                          src={`${basePath}${current.image}`}
-                          alt={`${current.label} do projeto ${project.title}`}
-                          className="project-img"
-                        />
-                        {gallery.length > 1 ? (
-                          <>
-                            <button
-                              type="button"
-                              className="project-carousel-btn project-carousel-btn--prev"
-                              aria-label={`Imagem anterior de ${project.title}`}
-                              onClick={() => setSlide(project.title, "prev", gallery.length)}
-                            >
-                              <FiChevronLeft size={16} />
-                            </button>
-                            <button
-                              type="button"
-                              className="project-carousel-btn project-carousel-btn--next"
-                              aria-label={`Próxima imagem de ${project.title}`}
-                              onClick={() => setSlide(project.title, "next", gallery.length)}
-                            >
-                              <FiChevronRight size={16} />
-                            </button>
-                            <div className="project-carousel-dots" aria-label={`Selecionar imagem do projeto ${project.title}`}>
-                              {gallery.map((item, index) => (
-                                <button
-                                  key={item.label}
-                                  type="button"
-                                  className={index === activeSlide ? "is-active" : ""}
-                                  aria-label={`Ver ${item.label} do projeto ${project.title}`}
-                                  aria-pressed={index === activeSlide}
-                                  onClick={() =>
-                                    setProjectSlides((current) => ({
-                                      ...current,
-                                      [project.title]: index,
-                                    }))
-                                  }
-                                />
-                              ))}
-                            </div>
-                          </>
-                        ) : null}
-                        <div className="project-preview-label">
-                          {current.label}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="project-links">
-                      {project.links.map((link) => (
-                        <a
-                          key={link.label}
-                          href={link.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          className={link.label.toLowerCase().includes("código") ? "btn-secondary" : "btn-primary"}
-                        >
-                          {link.label.toLowerCase().includes("código") ? <FaGithub size={14} /> : <FiExternalLink size={14} />}
-                          {link.label}
-                        </a>
-                      ))}
-                    </div>
-                  </>
-                );
-              })()}
-            </div>
-          </article>
+            </article>
+            );
+          })()
         ))}
       </section>
 
